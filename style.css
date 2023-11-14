@@ -59,6 +59,7 @@ nav {
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-between;
+  align-items: center;
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1), 0px -10px 10px rgba(0, 0, 0, 0.1);
 }
 #icon-sun {
@@ -67,7 +68,14 @@ nav {
 }
 #icon-sun div {
   font-size: 1.3rem;
-  padding: 7% 70px;
+  display: flex;
+  padding-left: 25px;
+  padding-top: 10px;
+  align-items: center;
+}
+#icon-sun a  {
+  display: flex;
+  align-items: center;
 }
 #nav-menu {
   display: flex;
@@ -108,6 +116,8 @@ nav {
 .search-explain-container {
   display: flex;
   justify-content: center;
+  padding: 0 30px;
+  line-height: 30px;
 }
 #search-explain {
   width: 1214px;
@@ -226,43 +236,52 @@ aside {
   direction: rtl;
   font-weight: 400;
   font-size: 0.8rem;
-  text-overflow: ellipsis;
   overflow: hidden;
-  height: 6ch;
-  /* white-space: nowrap; */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3; /* Adjust the number of lines as needed */
+  height: 3em; /* Adjust the height as needed */
 }
+
 #post-explain p::after {
   content: "...";
+  display: inline-block;
+  vertical-align: bottom;
 }
 #save-and-download {
   font-size: 0.8rem;
-  margin-top: 10px;
+  margin-top: 30px;
   display: flex;
   align-items: baseline;
+  justify-content: flex-end;
   direction: rtl;
   padding: 0 20px;
+  margin-right: auto;
 }
 #save-and-download a {
   display: flex;
-  align-items: baseline;
+  align-items: center;
+  gap: 0 5px;
   text-decoration: none;
-  color: black;
-  margin-left: 15px;
+  color: #fff;
+  background: #3b82f6;
+  padding: 6px 20px;
+  border-radius: 10px;
+  margin-right: 15px;
   transition: all 0.3s;
 }
-#save-and-download a span {
-  margin-right: 3px;
-}
+
 #save-and-download a:hover {
-  color: tomato;
+  background: #2563eb;
 }
 #save-and-download div {
   cursor: pointer;
   border-radius: 10px;
-  background-color: rgb(245, 255, 220);
-  color: rgba(0, 0, 0, 0.3);
+  background-color: #f1f5f9;
   padding: 10px 10px;
   display: flex;
+  color: rgba(0, 0, 0, 0.6);
+  gap: 0 5px;
   align-items: baseline;
   transition: all 0.3s;
 }
@@ -279,6 +298,7 @@ aside {
 .applications {
   margin-top: 25px;
   display: flex;
+  flex-direction: column;
   justify-content: space-evenly;
 }
 .applications div {
@@ -286,6 +306,7 @@ aside {
   border-radius: 40px;
   display: flex;
   align-items: baseline;
+  justify-content: center;
   padding: 10px 15px;
   transition: all 0.3s ease;
 }
@@ -297,7 +318,6 @@ aside {
   white-space: nowrap;
   font-size: 0.9rem;
   transition: all 0.1s;
-  display: none;
 }
 .applications-archievs {
   margin-top: 20px;
@@ -441,6 +461,9 @@ footer::before {
 }
 .details-content-main {
   margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px 0;
 }
 .details-content-main a {
   text-overflow: ellipsis;
@@ -448,7 +471,7 @@ footer::before {
   display: inline-block;
   text-decoration: none;
   color: rgba(0, 0, 0, 0.7);
-  font-size: 0.6rem;
+  font-size: 0.7rem;
   font-weight: 600;
 }
 .bars-show-container {
@@ -468,6 +491,7 @@ footer::before {
   display: flex;
   align-items: baseline;
   text-decoration: none;
+  gap: 0 10px;
   color: rgba(0, 0, 0, 0.7);
 }
 .bars-show a:hover {
@@ -522,6 +546,9 @@ footer::before {
     display: flex;
     flex-direction: column;
   }
+  .details-content-main a{
+    font-size: 1rem;
+  }
   footer::before {
     padding-top: 130px;
     padding-left: 180%;
@@ -549,6 +576,9 @@ footer::before {
   #about {
     text-align: center;
   }
+  .details-content-main a{
+    font-size: .7rem;
+  }
   .post {
     flex-direction: column-reverse;
     height: auto;
@@ -572,8 +602,21 @@ footer::before {
   .post-container {
     width: 100%;
   }
+  #post-explain p {
+    direction: rtl;
+    font-weight: 400;
+    font-size: 0.8rem;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2; /* Adjust the number of lines as needed */
+    height: 3em; /* Adjust the height as needed */
+  }
 }
 @media screen and (max-width: 340px) {
+  #save-and-download {
+    padding: 0 ;
+  }
   nav {
     padding: 15px 30px;
   }
